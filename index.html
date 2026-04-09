@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Portfolio</h1>
-    <p>Tag 1</p>
-    <p>Test</p>
+    <header>
+        <nav>
+            <a href="#about" class="logo">Portfolio.</a>
+            <ul class="nav-links">
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#projects">Meine Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <h1>Hallo, ich bin <span>Sviatoslav Kyselov</span></h1>
+            <p>Junior Webentwickler. Ich erstelle moderne und benutzerfreundliche Websites.</p>
+            <a href="#projects" class="btn">Projekte ansehen</a>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Meine Projekte</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Projekt 1</h3>
+                    <p>Eine Landingpage für ein lokales Unternehmen. Erstellt mit HTML und CSS.</p>
+                    <a href="#">Code ansehen</a>
+                </div>
+                <div class="project-card">
+                    <h3>Projekt 2</h3>
+                    <p>Eine To-Do-Listen-Anwendung, programmiert in JavaScript.</p>
+                    <a href="#">Code ansehen</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Lass uns in Kontakt treten</h2>
+        <p>E-Mail: kyselovsviatoslav@gmail.de | Telegram: @sviatkys</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
