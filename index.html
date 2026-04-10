@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Portfolio</title>
+    <title>Sviatoslav Kyselov - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#about" class="logo">Portfolio.</a>
+            <a href="#about" class="logo">Sviatoslav.</a>
             <ul class="nav-links">
                 <li><a href="#about">Über mich</a></li>
-                <li><a href="#projects">Meine Projekte</a></li>
+                <li><a href="#skills">Fähigkeiten</a></li>
+                <li><a href="#education">Werdegang</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#cv-section">Lebenslauf</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
@@ -21,30 +24,197 @@
     <main>
         <section id="about" class="hero">
             <h1>Hallo, ich bin <span>Sviatoslav Kyselov</span></h1>
-            <p>Junior Webentwickler. Ich erstelle moderne und benutzerfreundliche Websites.</p>
-            <a href="#projects" class="btn">Projekte ansehen</a>
+            <p>Ein vielseitiger Entwickler und 3D-Künstler mit Fokus auf IT-Lösungen und kreative Gestaltung.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">Projekte ansehen</a>
+                <a href="Sviatoslav_Kyselov_Lebenslauf.pdf" class="btn btn-outline" target="_blank">PDF Herunterladen</a>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2>Meine Fähigkeiten & Stärken <br><span class="subtitle">(Klicken zum Umdrehen)</span></h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="icon">💻</div>
+                            <h3>Programmierung</h3>
+                            <p>Python, HTML, CSS & JS.</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Python & Web</h3>
+                            <p>Fokus auf Clean Code. Praktische Erfahrung in der Erstellung von Automatisierungsscripten und Datenstrukturen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="icon">🎨</div>
+                            <h3>3D-Modellierung</h3>
+                            <p>Blender: Modelle & Renderings.</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Blender 3D</h3>
+                            <p>Sicherer Umgang mit polygonaler Modellierung, sauberer Topologie, UV-Layouts und finalem Rendering.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="icon">📊</div>
+                            <h3>Microsoft 365</h3>
+                            <p>Word, Excel und PowerPoint.</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Office Tools</h3>
+                            <p>Sehr gute Kenntnisse in komplexer Dokumentenformatierung (Word) und Arbeiten mit Formeln (Excel).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="icon">🛠</div>
+                            <h3>Hardware</h3>
+                            <p>IT-Hardware & Diagnose.</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Systembetreuung</h3>
+                            <p>Gute praktische Kenntnisse in der PC-Montage, Fehlerdiagnose und Behebung von Hardware-Problemen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="icon">🌍</div>
+                            <h3>Sprachen</h3>
+                            <p>Deutsch, Englisch, UA/RU.</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Kommunikation</h3>
+                            <p>Deutsch (B2) – fließend für den Alltag. Englisch (B1) – gut für IT-Dokus. Ukrainisch/Russisch (Muttersprache).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="icon">🚀</div>
+                            <h3>Soft Skills</h3>
+                            <p>Zuverlässigkeit, Teamfähigkeit.</p>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Persönlichkeit</h3>
+                            <p>Ich zeichne mich durch Zuverlässigkeit aus und bewahre auch in stressigen Situationen einen kühlen Kopf.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education" class="education-section">
+            <h2>Bildungsweg & Erfahrung <br><span class="subtitle">(Punkte anklicken für Details)</span></h2>
+            <div class="timeline" id="timeline-container">
+                
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <h3>Vorbereitungskurs Schulversuch</h3>
+                    <p class="date">2025 - 2026 | Victor-Klemperer-Kolleg Berlin</p>
+                    <div class="timeline-details">
+                        <p>Das VKK ist eine renommierte staatliche Schule des Zweiten Bildungswegs. Im Vorbereitungskurs vertiefe ich intensiv meine Deutschkenntnisse (Ziel B2) sowie Mathematik und Englisch, um mich optimal auf den Erwerb des Abiturs vorzubereiten.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <h3>Willkommensklasse</h3>
+                    <p class="date">2024 - 2025 | Ruth-Cohn-Schule Berlin</p>
+                    <div class="timeline-details">
+                        <p>Besuch der Willkommensklasse an diesem Oberstufenzentrum für Sozialwesen. Der Fokus lag auf intensiver sprachlicher Integration und der Vorbereitung auf das berufliche Ausbildungssystem in Deutschland.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <h3>Praktische Erfahrung & Nebenjobs</h3>
+                    <p class="date">Laufend | Programmierung, 3D-Design & Service</p>
+                    <div class="timeline-details">
+                        <p>Erfolgreiche Umsetzung kleinerer Auftragsarbeiten (3D und Code). Zudem konnte ich durch Nebenjobs (Supermarkt, Gastronomie) meine Kommunikations- und Teamfähigkeit in der Praxis unter Beweis stellen.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <h3>Sekundäres Polytechnisches Lyzeum</h3>
+                    <p class="date">2017 - 2024 | Ukraine</p>
+                    <div class="timeline-details">
+                        <p>Erwerb des Mittleren Schulabschlusses (MSA) in der Ukraine mit einer starken naturwissenschaftlich-technischen Grundausbildung.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <section id="projects" class="projects-section">
-            <h2>Meine Projekte</h2>
+            <h2>Ausgewählte Projekte</h2>
             <div class="project-grid">
-                <div class="project-card">
-                    <h3>Projekt 1</h3>
-                    <p>Eine Landingpage für ein lokales Unternehmen. Erstellt mit HTML und CSS.</p>
-                    <a href="#">Code ansehen</a>
+                <div class="project-card-simple">
+                    <h3>Blender Showcase</h3>
+                    <p>Kollektion meiner 3D-Modelle.</p>
+                    <a href="#">Details →</a>
                 </div>
-                <div class="project-card">
-                    <h3>Projekt 2</h3>
-                    <p>Eine To-Do-Listen-Anwendung, programmiert in JavaScript.</p>
-                    <a href="#">Code ansehen</a>
+                <div class="project-card-simple">
+                    <h3>Python Tools</h3>
+                    <p>Automatisierungsscripte.</p>
+                    <a href="#">Details →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv-section" class="cv-section">
+            <h2>Lebenslauf & Zertifikate</h2>
+            <div class="cv-container">
+                <h3>Sviatoslav Kyselov</h3>
+                <p><strong>Adresse:</strong> Stollbergerstraße 87, Berlin 12627</p>
+                <p><strong>Telefon:</strong> +49 151 72298206</p>
+                <p><strong>E-Mail:</strong> kyselovsviatoslav@gmail.com</p>
+                <hr>
+                <h4>Profil</h4>
+                <p>Ein zielstrebiger Entwickler mit starker Lernbereitschaft. Zu meinen Stärken zählen Zuverlässigkeit, Pünktlichkeit, Teamfähigkeit und Problemlösungsfähigkeit.</p>
+                <hr>
+                <h4>Erfahrung</h4>
+                <ul>
+                    <li>Auftragsarbeiten als Programmierer und in der 3D-Modellierung.</li>
+                    <li>Arbeit als Mitarbeiter im Supermarkt (Nebenjob).</li>
+                    <li>Aushilfe in der Bäckerei (Ferienjob).</li>
+                    <li>Küchenhilfe im asiatischen Restaurant (Nebenjob).</li>
+                </ul>
+            </div>
+
+            <div class="certificates-container">
+                <h3>Meine Zertifikate</h3>
+                <div class="cert-grid">
+                    <div class="cert-card">Hier kommt Bild Zertifikat 1</div>
+                    <div class="cert-card">Hier kommt Bild Zertifikat 2</div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer id="contact">
-        <h2>Lass uns in Kontakt treten</h2>
-        <p>E-Mail: kyselovsviatoslav@gmail.de | Telegram: @sviatkys</p>
+        <h2>Kontakt</h2>
+        <p>Berlin, Deutschland</p>
+        <p>E-Mail: <a href="mailto:kyselovsviatoslav@gmail.com" style="color: #fff;">kyselovsviatoslav@gmail.com</a></p>
     </footer>
 
     <script src="script.js"></script>
