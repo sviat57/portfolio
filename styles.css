@@ -322,11 +322,13 @@ section h2 {
 
 .project-card-simple {
     background: #ffffff;
-    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     border: 1px solid #eee;
     transition: all 0.3s ease;
+    overflow: hidden; /* Обрезает картинку по скругленным углам карточки */
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card-simple:hover {
@@ -335,27 +337,62 @@ section h2 {
     border-color: #4f46e5;
 }
 
-.project-card-simple h3 {
-    margin-bottom: 15px;
+/* Стили для изображений проектов */
+.project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Картинка заполняет область без искажений */
+    border-bottom: 1px solid #eee;
+}
+
+/* Обертка для текста внутри карточки */
+.project-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
     color: #111827;
     font-size: 1.4rem;
 }
 
-.project-card-simple p {
-    color: #6b7280;
-    margin-bottom: 20px;
+/* Стили для тегов технологий */
+.project-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
-.project-card-simple a {
+.tag {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-content p {
+    color: #6b7280;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Прижимает кнопку "Details" к низу, если текст разной длины */
+}
+
+.project-content a {
     color: #4f46e5;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-.project-card-simple a:hover {
+.project-content a:hover {
     color: #3730a3;
 }
+
 
 /* =========================================
    8. ПОДВАЛ (ФУТЕР)
@@ -531,4 +568,161 @@ footer a:hover {
     color: #4b5563;
     line-height: 1.7;
     font-size: 1.1rem;
+}
+/* Сетка для карточек в один ряд */
+.projects-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Важно: каждая карточка своей высоты */
+}
+
+/* Сама карточка */
+.interactive-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.interactive-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Текст-подсказка */
+.click-hint {
+    font-size: 0.85rem;
+    color: #4f46e5;
+    margin-top: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Скрытый блок с анимацией */
+.project-details-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fdfdfd;
+}
+
+.project-details-expand.open {
+    max-height: 600px; /* Достаточно места для текста */
+}
+
+.expand-inner {
+    padding: 0 25px 25px 25px;
+    font-size: 0.95rem;
+}
+
+.expand-inner hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.expand-inner h4 {
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.expand-inner ul {
+    list-style: none;
+    padding: 0;
+}
+
+.expand-inner li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.expand-inner li::before {
+    content: "•";
+    color: #4f46e5;
+    position: absolute;
+    left: 0;
+}
+
+/* Кнопка-ссылка */
+.project-link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #4f46e5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.project-link-btn:hover {
+    background: #3730a3;
+}
+.projects-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Для мобильных устройств */
+}
+
+.interactive-card {
+    flex: 1;
+    min-width: 320px;
+    max-width: 450px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.click-hint {
+    color: #4f46e5;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.project-details-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f9fafb;
+}
+
+.project-details-expand.open {
+    max-height: 800px; /* Достаточно места для текста */
+}
+
+.expand-inner {
+    padding: 0 25px 25px 25px;
+}
+
+.project-link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #4f46e5;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
 }

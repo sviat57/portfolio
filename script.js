@@ -47,5 +47,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Выбираем все карточки проектов
+    // Логика для карточек проектов (Независимое открытие)
+   const projectCards = document.querySelectorAll('.interactive-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Игнорируем клик, если нажали на ссылку
+            if (e.target.closest('.project-link-btn')) return;
+
+            const expandBlock = card.querySelector('.project-details-expand');
+            const hint = card.querySelector('.click-hint');
+            
+            // Просто переключаем состояние текущей карточки
+            const isOpen = expandBlock.classList.toggle('open');
+
+            // Меняем текст подсказки
+            if (isOpen) {
+                hint.textContent = 'Schließen';
+            } else {
+                hint.textContent = 'Klicken für Details';
+            }
+        });
+    });
 
 });
