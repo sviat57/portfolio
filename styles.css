@@ -19,11 +19,14 @@ body {
    2. НАВИГАЦИЯ (ШАПКА)
    ========================================= */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky; /* Прилипает к верху экрана */
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый */
+    backdrop-filter: blur(10px); /* Эффект матового стекла */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 nav {
@@ -75,7 +78,7 @@ nav {
     color: #111827;
 }
 
-.hero h1 span {
+.hero h1 span:last-child {
     color: #4f46e5; /* Синий акцент */
 }
 
@@ -838,4 +841,203 @@ nav {
     white-space: nowrap; /* Гарантирует, что имя всегда будет в одну строку */
     font-size: 1.6rem;
     margin-right: 20px;
+}
+/* --- Кнопка "Наверх" с Мягкой Базой --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px; /* Немного крупнее для объема */
+    height: 60px;
+    
+    /* Базовый цвет кнопки - матовый, мягкий */
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 50%; /* Круглая форма для "пузырька" */
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    /* Очень мягкая, глубокая тень под всей кнопкой */
+    box-shadow: 
+        0 10px 25px -5px rgba(79, 70, 229, 0.4),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    
+    /* Состояние скрыто */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    
+    /* Плавная, "резиновая" анимация */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    
+    /* Чтобы блики не вылезали за пределы */
+    overflow: hidden; 
+}
+
+/* --- Тот самый 3D "Пузырек-Стрелка" с Бликами --- */
+.back-to-top::after {
+    content: "";
+    width: 32px; /* Размер пузырька */
+    height: 32px;
+    
+    /* Иконка стрелки (SVG) + Сложные градиенты для бликов */
+    background-image: 
+        /* 1. Верхний яркий блик (свет) */
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 25%),
+        /* 2. Нижний мягкий блик (отсвет) */
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 30%),
+        /* 3. Основной глянцевый градиент самого пузырька */
+        linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%),
+        /* 4. Сама иконка стрелки (белая, встроенный SVG) */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5M5 12l7-7 7 7'/%3E%3C/svg%3E");
+    
+    background-size: cover, cover, cover, 70%; /* Размеры для каждого слоя */
+    background-position: center, center, center, center center;
+    background-repeat: no-repeat;
+    
+    border-radius: 50%; /* Сам пузырек внутри тоже круглый */
+    
+    /* Внутренняя тень самого пузырька для объема */
+    box-shadow: 
+        inset 0 2px 3px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+
+    transition: all 0.3s ease;
+}
+
+/* --- Появление кнопки --- */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Эффекты при наведении --- */
+.back-to-top:hover {
+    background-color: #4338ca; /* Чуть темнее фон кнопки */
+    transform: translateY(-5px); /* Кнопка всплывает */
+    box-shadow: 
+        0 15px 30px -5px rgba(79, 70, 229, 0.6),
+        0 10px 15px -6px rgba(0, 0, 0, 0.15);
+}
+
+/* Пузырек внутри при наведении "играет" на свету */
+.back-to-top:hover::after {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 
+        inset 0 3px 5px rgba(255, 255, 255, 0.5),
+        inset 0 -3px 7px rgba(0, 0, 0, 0.2),
+        0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Эффект нажатия --- */
+.back-to-top:active {
+    transform: translateY(-2px) scale(0.95);
+    transition: all 0.1s ease;
+}
+
+.back-to-top:active::after {
+    transform: scale(0.9);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+/* Базовый класс для скрытых элементов */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Класс, который добавит JS при прокрутке */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+    /* --- Плавное появление (Scroll Reveal) --- */
+/* Начальное состояние: невидимы и опущены на 50px вниз */
+.skills-section, 
+.education-section, 
+.projects-section,
+.cv-section,
+.contact-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Состояние, когда скрипт замечает секцию на экране */
+.skills-section.active, 
+.education-section.active, 
+.projects-section.active,
+.cv-section.active,
+.contact-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* --- Переключатель языков (Language Toggle) --- */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.lang-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #9ca3af; /* Серый цвет для неактивного языка */
+    transition: color 0.3s ease;
+}
+
+.lang-label.active {
+    color: #4f46e5; /* Синий для активного языка */
+}
+
+/* Стилизация самой "таблетки" */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #e5e7eb;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 34px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Состояние, когда выбран английский (рычажок вправо) */
+input:checked + .slider {
+    background-color: #4f46e5;
+}
+input:checked + .slider:before {
+    transform: translateX(22px);
 }

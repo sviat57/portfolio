@@ -9,42 +9,50 @@
 <body>
     <header>
         <nav>
-            <a href="#about" class="logo">Sviatoslav.</a>
-            <ul class="nav-links">
-                <li><a href="#about">Über mich</a></li>
-                <li><a href="#skills">Fähigkeiten</a></li>
-                <li><a href="#education">Werdegang</a></li>
-                <li><a href="#projects">Projekte</a></li>
-                <li><a href="#cv-section">Lebenslauf</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+        <a href="#about" class="logo">Sviatoslav.</a>
+        <ul class="nav-links">
+            <li><a href="#about" data-i18n="nav-about">Über mich</a></li>
+            <li><a href="#skills" data-i18n="nav-skills">Fähigkeiten</a></li>
+            <li><a href="#education" data-i18n="nav-edu">Werdegang</a></li>
+            <li><a href="#projects" data-i18n="nav-proj">Projekte</a></li>
+            <li><a href="#cv-section" data-i18n="nav-cv">Lebenslauf</a></li>
+            <li><a href="#contact" data-i18n="nav-contact">Kontakt</a></li>
+        </ul>
 
-    <main>
-        <section id="about" class="hero">
-            <h1>Hallo, ich bin <span>Sviatoslav Kyselov</span></h1>
-            <p>Ein vielseitiger Entwickler und 3D-Künstler mit Fokus auf IT-Lösungen und kreative Gestaltung.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">Projekte ansehen</a>
-                <a href="Sviatoslav_Kyselov_Lebenslauf.pdf" class="btn btn-outline" target="_blank">PDF Herunterladen</a>
+        <div class="lang-switch">
+                <span id="label-de" class="lang-label active">DE</span>
+                <label class="switch">
+                    <input type="checkbox" id="lang-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="label-en" class="lang-label">EN</span>
             </div>
-        </section>
+        </nav>
+    </header> 
+    <main> 
 
+    <section id="about" class="hero">
+        <h1><span data-i18n="hero-hello">Hallo, ich bin</span> <span>Sviatoslav Kyselov</span></h1>
+        <p data-i18n="hero-desc">Ein vielseitiger Entwickler und 3D-Künstler mit Fokus auf IT-Lösungen und kreative Gestaltung.</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn" data-i18n="btn-proj">Projekte ansehen</a>
+            <a href="Sviatoslav_Kyselov_Lebenslauf.pdf" class="btn btn-outline" target="_blank" data-i18n="btn-pdf">PDF Herunterladen</a>
+        </div>
+    </section>
         <section id="skills" class="skills-section">
-            <h2>Meine Fähigkeiten & Stärken <br><span class="subtitle">(Klicken zum Umdrehen)</span></h2>
+            <h2 data-i18n="skills-title">Meine Fähigkeiten & Stärken <br><span class="subtitle">(Klicken zum Umdrehen)</span></h2>
             <div class="skills-grid">
                 
                 <div class="skill-card">
                     <div class="skill-card-inner">
                         <div class="skill-card-front">
                             <div class="icon">💻</div>
-                            <h3>Programmierung</h3>
-                            <p>Python, HTML, CSS & JS.</p>
+                            <h3 data-i18n="skill-1-front-title">Programmierung</h3>
+                            <p data-i18n="skill-1-front-desc">Python, HTML, CSS & JS.</p>
                         </div>
                         <div class="skill-card-back">
-                            <h3>Python & Web</h3>
-                            <p>Fokus auf Clean Code. Praktische Erfahrung in der Erstellung von Automatisierungsscripten und Datenstrukturen.</p>
+                            <h3 data-i18n="skill-1-back-title">Python & Web</h3>
+                            <p data-i18n="skill-1-back-desc">Fokus auf Clean Code. Praktische Erfahrung...</p>
                         </div>
                     </div>
                 </div>
@@ -53,12 +61,12 @@
                     <div class="skill-card-inner">
                         <div class="skill-card-front">
                             <div class="icon">🎨</div>
-                            <h3>3D-Modellierung</h3>
-                            <p>Blender: Modelle & Renderings.</p>
+                            <h3 data-i18n="skill-2-front-title">3D-Modellierung</h3>
+                            <p data-i18n="skill-2-front-desc">Blender: Modelle & Renderings.</p>
                         </div>
                         <div class="skill-card-back">
-                            <h3>Blender 3D</h3>
-                            <p>Sicherer Umgang mit polygonaler Modellierung, sauberer Topologie, UV-Layouts und finalem Rendering.</p>
+                            <h3 data-i18n="skill-2-back-title">Blender 3D</h3>
+                            <p data-i18n="skill-2-back-desc">Sicherer Umgang mit polygonaler Modellierung, sauberer Topologie, UV-Layouts und finalem Rendering.</p>
                         </div>
                     </div>
                 </div>
@@ -67,12 +75,12 @@
                     <div class="skill-card-inner">
                         <div class="skill-card-front">
                             <div class="icon">📊</div>
-                            <h3>Microsoft 365</h3>
-                            <p>Word, Excel und PowerPoint.</p>
+                            <h3 data-i18n="skill-3-front-title">Microsoft 365</h3>
+                            <p data-i18n="skill-3-front-desc">Word, Excel und PowerPoint.</p>
                         </div>
                         <div class="skill-card-back">
-                            <h3>Office Tools</h3>
-                            <p>Sehr gute Kenntnisse in komplexer Dokumentenformatierung (Word) und Arbeiten mit Formeln (Excel).</p>
+                            <h3 data-i18n="skill-3-back-title">Office Tools</h3>
+                            <p data-i18n="skill-3-back-desc">Sehr gute Kenntnisse in komplexer Dokumentenformatierung (Word) und Arbeiten mit Formeln (Excel).</p>
                         </div>
                     </div>
                 </div>
@@ -81,12 +89,12 @@
                     <div class="skill-card-inner">
                         <div class="skill-card-front">
                             <div class="icon">🛠</div>
-                            <h3>Hardware</h3>
-                            <p>IT-Hardware & Diagnose.</p>
+                            <h3 data-i18n="skill-4-front-title">Hardware</h3>
+                            <p data-i18n="skill-4-front-desc">IT-Hardware & Diagnose.</p>
                         </div>
                         <div class="skill-card-back">
-                            <h3>Systembetreuung</h3>
-                            <p>Gute praktische Kenntnisse in der PC-Montage, Fehlerdiagnose und Behebung von Hardware-Problemen.</p>
+                            <h3 data-i18n="skill-4-back-title">Systembetreuung</h3>
+                            <p data-i18n="skill-4-back-desc">Gute praktische Kenntnisse in der PC-Montage, Fehlerdiagnose und Behebung von Hardware-Problemen.</p>
                         </div>
                     </div>
                 </div>
@@ -95,12 +103,12 @@
                     <div class="skill-card-inner">
                         <div class="skill-card-front">
                             <div class="icon">🌍</div>
-                            <h3>Sprachen</h3>
-                            <p>Deutsch, Englisch, UA/RU.</p>
+                            <h3 data-i18n="skill-5-front-title">Sprachen</h3>
+                            <p data-i18n="skill-5-front-desc">Deutsch, Englisch, UA/RU.</p>
                         </div>
                         <div class="skill-card-back">
-                            <h3>Kommunikation</h3>
-                            <p>Deutsch (B2) – fließend für den Alltag. Englisch (B1) – gut für IT-Dokus. Ukrainisch/Russisch (Muttersprache).</p>
+                            <h3 data-i18n="skill-5-back-title">Kommunikation</h3>
+                            <p data-i18n="skill-5-back-desc">Deutsch (B2) – fließend für den Alltag. Englisch (B1) – gut für IT-Dokus. Ukrainisch/Russisch (Muttersprache).</p>
                         </div>
                     </div>
                 </div>
@@ -109,12 +117,12 @@
                     <div class="skill-card-inner">
                         <div class="skill-card-front">
                             <div class="icon">🚀</div>
-                            <h3>Soft Skills</h3>
-                            <p>Zuverlässigkeit, Teamfähigkeit.</p>
+                            <h3 data-i18n="skill-6-front-title">Soft Skills</h3>
+                            <p data-i18n="skill-6-front-desc">Zuverlässigkeit, Teamfähigkeit.</p>
                         </div>
                         <div class="skill-card-back">
-                            <h3>Persönlichkeit</h3>
-                            <p>Ich zeichne mich durch Zuverlässigkeit aus und bewahre auch in stressigen Situationen einen kühlen Kopf.</p>
+                            <h3 data-i18n="skill-6-back-title">Persönlichkeit</h3>
+                            <p data-i18n="skill-6-back-desc">Ich zeichne mich durch Zuverlässigkeit aus und bewahre auch in stressigen Situationen einen kühlen Kopf.</p>
                         </div>
                     </div>
                 </div>
@@ -123,50 +131,50 @@
         </section>
 
         <section id="education" class="education-section">
-            <h2>Bildungsweg & Erfahrung <br><span class="subtitle">(Punkte anklicken für Details)</span></h2>
+            <h2 data-i18n="edu-title">Bildungsweg & Erfahrung <br><span class="subtitle">(Punkte anklicken für Details)</span></h2>
             <div class="timeline" id="timeline-container">
                 <div class="timeline-item">
                     <div class="dot"></div>
-                    <h3>Praktikant im IT-Service</h3>
-                    <p class="date">04.2026 - Heute | Alice Salomon Hochschule, Berlin</p>
+                    <h3 data-i18n="edu-1-title">Praktikant im IT-Service</h3>
+                    <p class="date" data-i18n="edu-1-date">04.2026 - Heute | Alice Salomon Hochschule, Berlin</p>
                     <div class="timeline-details">
-                        <p>Entwicklung und Pflege der Hochschul-Webseite. Erstellung von 3D-Modellen mit Blender und Durchführung von 3D-Drucken. Vorbereitung von Hardware, Unterstützung bei Server-Wartung sowie Programmierung und Automatisierung mit Python.</p>
+                        <p data-i18n="edu-1-desc">Entwicklung und Pflege der Hochschul-Webseite. Erstellung von 3D-Modellen mit Blender und Durchführung von 3D-Drucken. Vorbereitung von Hardware, Unterstützung bei Server-Wartung sowie Programmierung und Automatisierung mit Python.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="dot"></div>
-                    <h3>Vorbereitungskurs Schulversuch</h3>
-                    <p class="date">2025 - 2026 | Victor-Klemperer-Kolleg Berlin</p>
+                    <h3 data-i18n="edu-2-title">Vorbereitungskurs Schulversuch</h3>
+                    <p class="date" data-i18n="edu-2-date">2025 - 2026 | Victor-Klemperer-Kolleg Berlin</p>
                     <div class="timeline-details">
-                        <p>Das VKK ist eine renommierte staatliche Schule des Zweiten Bildungswegs. Im Vorbereitungskurs vertiefe ich intensiv meine Deutschkenntnisse (Ziel B2) sowie Mathematik und Englisch, um mich optimal auf den Erwerb des Abiturs vorzubereiten.</p>
+                        <p data-i18n="edu-2-desc">Das VKK ist eine renommierte staatliche Schule des Zweiten Bildungswegs. Im Vorbereitungskurs vertiefe ich intensiv meine Deutschkenntnisse (Ziel B2) sowie Mathematik und Englisch, um mich optimal auf den Erwerb des Abiturs vorzubereiten.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="dot"></div>
-                    <h3>Willkommensklasse</h3>
-                    <p class="date">2024 - 2025 | Ruth-Cohn-Schule Berlin</p>
+                    <h3 data-i18n="edu-3-title">Willkommensklasse</h3>
+                    <p class="date" data-i18n="edu-3-date">2024 - 2025 | Ruth-Cohn-Schule Berlin</p>
                     <div class="timeline-details">
-                        <p>Besuch der Willkommensklasse an diesem Oberstufenzentrum für Sozialwesen. Der Fokus lag auf intensiver sprachlicher Integration und der Vorbereitung auf das berufliche Ausbildungssystem in Deutschland.</p>
+                        <p data-i18n="edu-3-desc">Besuch der Willkommensklasse an diesem Oberstufenzentrum für Sozialwesen. Der Fokus lag auf intensiver sprachlicher Integration und der Vorbereitung auf das berufliche Ausbildungssystem in Deutschland.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="dot"></div>
-                    <h3>Praktische Erfahrung & Nebenjobs</h3>
-                    <p class="date">Laufend | Programmierung, 3D-Design & Service</p>
+                    <h3 data-i18n="edu-4-title">Praktische Erfahrung & Nebenjobs</h3>
+                    <p class="date" data-i18n="edu-4-date">Laufend | Programmierung, 3D-Design & Service</p>
                     <div class="timeline-details">
-                        <p>Erfolgreiche Umsetzung kleinerer Auftragsarbeiten (3D und Code). Zudem konnte ich durch Nebenjobs (Supermarkt, Gastronomie) meine Kommunikations- und Teamfähigkeit in der Praxis unter Beweis stellen.</p>
+                        <p data-i18n="edu-4-desc">Erfolgreiche Umsetzung kleinerer Auftragsarbeiten (3D und Code). Zudem konnte ich durch Nebenjobs (Supermarkt, Gastronomie) meine Kommunikations- und Teamfähigkeit in der Praxis unter Beweis stellen.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="dot"></div>
-                    <h3>Sekundäres Polytechnisches Lyzeum</h3>
-                    <p class="date">2017 - 2024 | Ukraine</p>
+                    <h3 data-i18n="edu-5-title">Sekundäres Polytechnisches Lyzeum</h3>
+                    <p class="date" data-i18n="edu-5-date">2017 - 2024 | Ukraine</p>
                     <div class="timeline-details">
-                        <p>Erwerb des Mittleren Schulabschlusses (MSA) in der Ukraine mit einer starken naturwissenschaftlich-technischen Grundausbildung.</p>
+                        <p data-i18n="edu-5-desc">Erwerb des Mittleren Schulabschlusses (MSA) in der Ukraine mit einer starken naturwissenschaftlich-technischen Grundausbildung.</p>
                     </div>
                 </div>
 
@@ -174,7 +182,7 @@
         </section>
 
         <section id="projects" class="projects-section">
-            <h2>Meine Projekte</h2>
+            <h2 data-i18n="proj-title">Meine Projekte</h2>
             <div class="projects-grid">
                 
                 <div class="project-card-simple interactive-card">
@@ -186,20 +194,20 @@
                             <span class="tag">Architekturvisualisierung</span>
                             <span class="tag">Interieur</span>
                         </div>
-                        <p>Eine fotorealistische 3D-Visualisierung eines Innenraums mit Fokus auf Licht и Atmosphäre.</p>
-                        <p class="click-hint">Klicken für Details</p>
+                        <p data-i18n="proj-1-desc">Eine fotorealistische 3D-Visualisierung eines Innenraums mit Fokus auf Licht и Atmosphäre.</p>
+                        <p class="click-hint" data-i18n="proj-click-hint">Klicken für Details</p>
                     </div>
                     
                     <div class="project-details-expand">
                         <div class="expand-inner">
                             <hr>
-                            <h4>Projekt-Details</h4>
+                            <h4 data-i18n="proj-details-title">Projekt-Details</h4>
                             <ul>
-                                <li><strong>Beleuchtung:</strong> Einsatz von HDRI-Maps und Area Lights.</li>
-                                <li><strong>Materialien:</strong> Erstellung von komplexen PBR-Shadern.</li>
-                                <li><strong>Fokus:</strong> Realistische Lichtführung und Texturierung.</li>
+                                <li data-i18n="proj-1-li-1"><strong>Beleuchtung:</strong> Einsatz von HDRI-Maps und Area Lights.</li>
+                                <li data-i18n="proj-1-li-2"><strong>Materialien:</strong> Erstellung von komplexen PBR-Shadern.</li>
+                                <li data-i18n="proj-1-li-3"><strong>Fokus:</strong> Realistische Lichtführung und Texturierung.</li>
                             </ul>
-                            <a href="https://www.artstation.com/" target="_blank" class="project-link-btn">Auf ArtStation ansehen →</a>
+                            <a href="https://www.artstation.com/" target="_blank" class="project-link-btn" data-i18n="proj-btn-link">Auf ArtStation ansehen →</a>
                         </div>
                     </div>
                 </div>
@@ -213,20 +221,20 @@
                             <span class="tag">Produktdesign</span>
                             <span class="tag">Asset-Erstellung</span>
                         </div>
-                        <p>Ein kreatives Konzept einer stilisierten Tastatur mit Fokus auf Materialstudien.</p>
-                        <p class="click-hint">Klicken für Details</p>
+                        <p data-i18n="proj-2-desc">Ein kreatives Konzept einer stilisierten Tastatur mit Fokus auf Materialstudien.</p>
+                        <p class="click-hint" data-i18n="proj-click-hint">Klicken für Details</p>
                     </div>
                     
                     <div class="project-details-expand">
                         <div class="expand-inner">
                             <hr>
-                            <h4>Projekt-Details</h4>
+                            <h4 data-i18n="proj-details-title">Projekt-Details</h4>
                             <ul>
-                                <li><strong>Geometrie:</strong> Saubere Hard-Surface Topologie.</li>
-                                <li><strong>Shader:</strong> Prozedurale Effekte für leuchtende Tasten.</li>
-                                <li><strong>Stil:</strong> Kombination aus Realismus и stilisiertem Design.</li>
+                                <li data-i18n="proj-2-li-1"><strong>Geometrie:</strong> Saubere Hard-Surface Topologie.</li>
+                                <li data-i18n="proj-2-li-2"><strong>Shader:</strong> Prozedurale Effekte für leuchtende Tasten.</li>
+                                <li data-i18n="proj-2-li-3"><strong>Stil:</strong> Kombination aus Realismus и stilisiertem Design.</li>
                             </ul>
-                            <a href="https://www.artstation.com/" target="_blank" class="project-link-btn">Auf ArtStation ansehen →</a>
+                            <a href="https://www.artstation.com/" target="_blank" class="project-link-btn" data-i18n="proj-btn-link">Auf ArtStation ansehen →</a>
                         </div>
                     </div>
                 </div>
@@ -234,28 +242,28 @@
             </div>
         </section>
         <section id="cv-section" class="cv-section">
-            <h2>Lebenslauf & Zertifikate</h2>
+            <h2 data-i18n="cv-title">Lebenslauf & Zertifikate</h2>
             <div class="cv-container">
                 <h3>Sviatoslav Kyselov</h3>
-                <p><strong>Adresse:</strong> Stollbergerstraße 87, Berlin 12627</p>
-                <p><strong>Telefon:</strong> +49 151 72298206</p>
-                <p><strong>E-Mail:</strong> kyselovsviatoslav@gmail.com</p>
+                <p data-i18n="cv-address"><strong>Adresse:</strong> Stollbergerstraße 87, Berlin 12627</p>
+                <p data-i18n="cv-phone"><strong>Telefon:</strong> +49 151 72298206</p>
+                <p data-i18n="cv-email"><strong>E-Mail:</strong> kyselovsviatoslav@gmail.com</p>
                 <hr>
-                <h4>Profil</h4>
-                <p>Ein zielstrebiger Entwickler mit starker Lernbereitschaft. Zu meinen Stärken zählen Zuverlässigkeit, Pünktlichkeit, Teamfähigkeit und Problemlösungsfähigkeit.</p>
+                <h4 data-i18n="cv-profile-title">Profil</h4>
+                <p data-i18n="cv-profile-text">Ein zielstrebiger Entwickler mit starker Lernbereitschaft. Zu meinen Stärken zählen Zuverlässigkeit, Pünktlichkeit, Teamfähigkeit und Problemlösungsfähigkeit.</p>
                 <hr>
-                <h4>Erfahrung</h4>
+                <h4 data-i18n="cv-exp-title">Erfahrung</h4>
                 <ul>
-                    <li><strong>Praktikant im IT-Service</strong> (Alice Salomon Hochschule, 04.2026 - Heute): Webentwicklung, 3D-Druck/Modellierung (Blender), IT-Support und Python-Automatisierung.</li>
-                    <li>Auftragsarbeiten als Programmierer und in der 3D-Modellierung.</li>
-                    <li>Arbeit als Mitarbeiter im Supermarkt (Nebenjob).</li>
-                    <li>Aushilfe in der Bäckerei (Ferienjob).</li>
-                    <li>Küchenhilfe im asiatischen Restaurant (Nebenjob).</li>
+                    <li data-i18n="cv-exp-1"><strong>Praktikant im IT-Service</strong> (Alice Salomon Hochschule, 04.2026 - Heute): Webentwicklung, 3D-Druck/Modellierung (Blender), IT-Support und Python-Automatisierung.</li>
+                    <li data-i18n="cv-exp-2">Auftragsarbeiten als Programmierer und in der 3D-Modellierung.</li>
+                    <li data-i18n="cv-exp-3">Arbeit als Mitarbeiter im Supermarkt (Nebenjob).</li>
+                    <li data-i18n="cv-exp-4">Aushilfe in der Bäckerei (Ferienjob).</li>
+                    <li data-i18n="cv-exp-5">Küchenhilfe im asiatischen Restaurant (Nebenjob).</li>
                 </ul>
             </div>
 
             <div class="certificates-container">
-                <h3>Meine Zertifikate</h3>
+                <h3 data-i18n="cert-title">Meine Zertifikate</h3>
                 <div class="cert-grid">
                     <div class="cert-card">Hier kommt Bild Zertifikat 1</div>
                     <div class="cert-card">Hier kommt Bild Zertifikat 2</div>
@@ -267,39 +275,39 @@
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
-                <h2>Kontakt</h2>
-                <p>Haben Sie ein Projekt im Kopf или möchten Sie einfach nur Hallo sagen? Ich freue mich auf Ihre Nachricht!</p>
+                <h2 data-i18n="contact-title">Kontakt</h2>
+                <p data-i18n="contact-desc">Haben Sie ein Projekt im Kopf или möchten Sie einfach nur Hallo sagen? Ich freue mich auf Ihre Nachricht!</p>
                 <ul class="contact-details">
-                    <li><strong>Ort:</strong> Berlin, Deutschland</li>
-                    <li><strong>E-Mail:</strong> <a href="mailto:kyselovsviatoslav@gmail.com">kyselovsviatoslav@gmail.com</a></li>
-                    <li><strong>Telefon:</strong> +49 151 72298206</li>
+                    <li data-i18n="contact-loc"><strong>Ort:</strong> Berlin, Deutschland</li>
+                    <li data-i18n="cv-email"><strong>E-Mail:</strong> <a href="mailto:kyselovsviatoslav@gmail.com">kyselovsviatoslav@gmail.com</a></li>
+                    <li data-i18n="cv-phone"><strong>Telefon:</strong> +49 151 72298206</li>
                 </ul>
             </div>
 
             <form action="https://formspree.io/f/mbdqrgdq" method="POST" class="contact-form">
                 <div class="form-group">
-                    <label for="full-name">Name</label>
-                    <input type="text" name="name" id="full-name" placeholder="Ihr Name" required>
+                    <label for="full-name" data-i18n="form-label-name">Name</label>
+                    <input type="text" name="name" id="full-name" data-i18n-ph="form-ph-name" placeholder="Ihr Name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email-address">E-Mail</label>
-                    <input type="email" name="_replyto" id="email-address" placeholder="ihre@email.de" required>
+                    <label for="email-address" data-i18n="form-label-email">E-Mail</label>
+                    <input type="email" name="_replyto" id="email-address" data-i18n-ph="form-ph-email" placeholder="ihre@email.de" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Nachricht</label>
-                    <textarea name="message" id="message" rows="5" placeholder="Wie kann ich Ihnen helfen?" required></textarea>
+                    <label for="message" data-i18n="form-label-msg">Nachricht</label>
+                    <textarea name="message" id="message" rows="5" data-i18n-ph="form-ph-msg" placeholder="Wie kann ich Ihnen helfen?" required></textarea>
                 </div>
                 <input type="hidden" name="_subject" value="Neue Nachricht von deinem Portfolio!">
-                <button type="submit" class="btn">Absenden</button>
+                <button type="submit" class="btn" data-i18n="form-btn">Absenden</button>
             </form>
         </div>
     </section>
 
     <footer class="mini-footer">
-        <p>&copy; 2024 Sviatoslav Kyselov. Alle Rechte vorbehalten.</p>
+        <p data-i18n="footer-text">&copy; 2024 Sviatoslav Kyselov. Alle Rechte vorbehalten.</p>
     </footer>
 
     <script src="script.js"></script>
-    <button id="back-to-top" class="back-to-top" title="Nach oben">↑</button>   
+    <button id="back-to-top" class="back-to-top"></button>
 </body>
 </html>
