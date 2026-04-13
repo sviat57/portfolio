@@ -726,3 +726,116 @@ footer a:hover {
     border-radius: 8px;
     font-weight: 600;
 }
+/* --- Секция Контактов --- */
+.contact-section {
+    padding: 100px 20px;
+    background-color: #f3f4f6; /* Светло-серый фон для контраста */
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+    text-align: left;
+    margin-bottom: 25px;
+    color: #4f46e5;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.contact-details a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- Стили формы --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* --- Маленький футер --- */
+.mini-footer {
+    text-align: center;
+    padding: 30px;
+    background: #111827;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+    .contact-info h2 {
+        text-align: center;
+    }
+}
+    
+/* --- Обновленные стили для навигации --- */
+nav {
+    flex-wrap: nowrap; /* ВОТ ЭТО ИСПРАВИТ ПРОБЛЕМУ: запрещаем перенос */
+    align-items: center;
+}
+
+.logo {
+    white-space: nowrap; /* Гарантирует, что имя всегда будет в одну строку */
+    font-size: 1.6rem;
+    margin-right: 20px;
+}

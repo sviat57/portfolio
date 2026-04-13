@@ -70,5 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // --- Логика кнопки "Наверх" ---
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        // Если прокрутили больше 400px, добавляем класс 'show'
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    // Плавный скролл наверх при клике
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
 });
