@@ -1,6 +1,40 @@
 /* =========================================
    1. БАЗОВЫЕ НАСТРОЙКИ
    ========================================= */
+/* --- Цветовые переменные для светлой и темной темы --- */
+:root {
+    --bg-main: #f9f9fc;
+    --bg-secondary: #f3f4f6; /* Добавили фон для секции контактов */
+    --text-main: #333333;
+    --text-heading: #111827;
+    --text-muted: #4b5563; /* Добавили приглушенный текст */
+    --bg-header: rgba(255, 255, 255, 0.7);
+    --bg-card: #ffffff;
+    --bg-card-inner: #fdfdfd; /* Добавили фон для раскрытых проектов */
+    --border-color: #eeeeee;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --bg-footer: #111827;
+    --input-bg: #ffffff; /* Добавили фон полей ввода */
+    --tag-bg: #e0e7ff;
+    --tag-text: #4338ca;
+}
+
+[data-theme="dark"] {
+    --bg-main: #121212;
+    --bg-secondary: #1a1a1a; 
+    --text-main: #d1d5db; 
+    --text-heading: #ffffff;
+    --text-muted: #9ca3af; 
+    --bg-header: rgba(18, 18, 18, 0.8);
+    --bg-card: #1e1e1e;
+    --bg-card-inner: #252525;
+    --border-color: #374151;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --bg-footer: #000000;
+    --input-bg: #2a2a2a; 
+    --tag-bg: rgba(79, 70, 229, 0.15); /* Полупрозрачный темно-синий фон */
+    --tag-text: #818cf8; /* Приятный светло-синий цвет текста */
+}
 * {
     margin: 0;
     padding: 0;
@@ -10,28 +44,29 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9fc;
+    color: var(--text-main);
+    background-color: var(--bg-main);
     scroll-behavior: smooth; /* Плавная прокрутка страницы */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* =========================================
    2. НАВИГАЦИЯ (ШАПКА)
    ========================================= */
 header {
-    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый */
+    background-color: var(--bg-header); /* Полупрозрачный белый */
     backdrop-filter: blur(10px); /* Эффект матового стекла */
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Левая часть - 1 доля, Центр - по размеру контента, Правая часть - 1 доля */
     align-items: center;
     padding: 20px 50px;
     max-width: 1200px;
@@ -39,16 +74,19 @@ nav {
 }
 
 .logo {
+    justify-self: start; /* Строго прижимаем к левому краю */
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--text-heading);
+    white-space: nowrap;
 }
 
 .nav-links {
-    list-style: none;
+    justify-self: center; /* Строго по центру экрана */
     display: flex;
     gap: 30px;
+    list-style: none;
 }
 
 .nav-links a {
@@ -61,6 +99,11 @@ nav {
 .nav-links a:hover {
     color: #4f46e5;
 }
+.nav-controls {
+    justify-self: end; /* Строго прижимаем к правому краю */
+    display: flex;
+    align-items: center;
+}   
 
 /* =========================================
    3. ГЛАВНЫЙ ЭКРАН (HERO)
@@ -75,7 +118,7 @@ nav {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    color: #111827;
+    color: var(--text-heading);
 }
 
 .hero h1 span:last-child {
@@ -138,7 +181,7 @@ section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: #111827;
+    color: var(--text-heading);
 }
 /* Вспомогательный класс для подзаголовков */
 .subtitle {
@@ -196,9 +239,9 @@ section h2 {
 
 /* Лицевая сторона */
 .skill-card-front {
-    background-color: #ffffff;
-    border: 1px solid #eee;
-    color: #111827;
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-heading);
 }
 
 .skill-card-front .icon {
@@ -247,11 +290,11 @@ section h2 {
 .timeline-item {
     position: relative;
     margin-bottom: 30px;
-    background: #fff;
+    background-color: var(--bg-card);
     padding: 20px 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border: 1px solid #f3f4f6;
+    border-color: var(--border-color);
+    border-color: var(--border-color);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Плавное раздвигание */
 }
 
@@ -324,10 +367,10 @@ section h2 {
 }
 
 .project-card-simple {
-    background: #ffffff;
+    background-color: var(--bg-card);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-color: var(--border-color);
     transition: all 0.3s ease;
     overflow: hidden; /* Обрезает картинку по скругленным углам карточки */
     display: flex;
@@ -358,7 +401,7 @@ section h2 {
 
 .project-content h3 {
     margin-bottom: 10px;
-    color: #111827;
+    color: var(--text-heading);
     font-size: 1.4rem;
 }
 
@@ -371,12 +414,13 @@ section h2 {
 }
 
 .tag {
-    background-color: #e0e7ff;
-    color: #4338ca;
+    background-color: var(--tag-bg); /* ИСПРАВЛЕНО */
+    color: var(--tag-text);          /* ИСПРАВЛЕНО */
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Добавлена плавность */
 }
 
 .project-content p {
@@ -401,7 +445,7 @@ section h2 {
    8. ПОДВАЛ (ФУТЕР)
    ========================================= */
 footer {
-    background-color: #111827;
+    background-color: var(--bg-footer);
     color: #f9fafb;
     text-align: center;
     padding: 60px 20px;
@@ -435,6 +479,7 @@ footer a:hover {
    ========================================= */
 @media (max-width: 768px) {
     nav {
+        display: flex;
         flex-direction: column;
         gap: 15px;
         padding: 15px;
@@ -469,10 +514,10 @@ footer a:hover {
 }
 
 .cv-container {
-    background: #fff;
+    background-color: var(--bg-card);
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px var(--shadow-color);
     margin-bottom: 50px;
     border-top: 5px solid #4f46e5;
 }
@@ -584,13 +629,12 @@ footer a:hover {
 /* Сама карточка */
 .interactive-card {
     flex: 1;
-    min-width: 300px;
+    min-width: 320px;
     max-width: 450px;
     cursor: pointer;
-    background: #fff;
+    background: var(--bg-card); /* ИСПРАВЛЕНО: было #fff */
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -613,8 +657,8 @@ footer a:hover {
 .project-details-expand {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #fdfdfd;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-card-inner); /* ИСПРАВЛЕНО: было #f9fafb */
 }
 
 .project-details-expand.open {
@@ -633,7 +677,7 @@ footer a:hover {
 }
 
 .expand-inner h4 {
-    color: #2d3748;
+    color: var(--text-heading); /* ИСПРАВЛЕНО: было #2d3748 */
     margin-bottom: 10px;
 }
 
@@ -683,7 +727,7 @@ footer a:hover {
     min-width: 320px;
     max-width: 450px;
     cursor: pointer;
-    background: #fff;
+    background: var(--bg-card); /* ИСПРАВЛЕНО */
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
@@ -708,7 +752,7 @@ footer a:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #f9fafb;
+    background: var(--bg-card-inner); /* ИСПРАВЛЕНО */
 }
 
 .project-details-expand.open {
@@ -732,8 +776,9 @@ footer a:hover {
 /* --- Секция Контактов --- */
 .contact-section {
     padding: 100px 20px;
-    background-color: #f3f4f6; /* Светло-серый фон для контраста */
-}
+    background-color: var(--bg-secondary); /* ИСПРАВЛЕНО: было #f3f4f6 */
+    transition: background-color 0.3s ease;
+}   
 
 .contact-container {
     max-width: 1000px;
@@ -741,10 +786,11 @@ footer a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    background: #ffffff;
+    background-color: var(--bg-card);
     padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    
 }
 
 .contact-info h2 {
@@ -755,7 +801,7 @@ footer a:hover {
 
 .contact-info p {
     font-size: 1.1rem;
-    color: #4b5563;
+    color: var(--text-muted); /* ИСПРАВЛЕНО: было #4b5563 */
     margin-bottom: 30px;
 }
 
@@ -791,13 +837,15 @@ footer a:hover {
 .form-group label {
     font-weight: 600;
     font-size: 0.9rem;
-    color: #1f2937;
+    color: var(--text-heading); /* ИСПРАВЛЕНО: было #1f2937 */
 }
 
 .form-group input, 
 .form-group textarea {
     padding: 14px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--border-color); /* ИСПРАВЛЕНО: было #d1d5db */
+    background-color: var(--input-bg); /* ДОБАВЛЕНО */
+    color: var(--text-main); /* ДОБАВЛЕНО */
     border-radius: 10px;
     font-size: 1rem;
     font-family: inherit;
@@ -830,18 +878,7 @@ footer a:hover {
         text-align: center;
     }
 }
-    
-/* --- Обновленные стили для навигации --- */
-nav {
-    flex-wrap: nowrap; /* ВОТ ЭТО ИСПРАВИТ ПРОБЛЕМУ: запрещаем перенос */
-    align-items: center;
-}
 
-.logo {
-    white-space: nowrap; /* Гарантирует, что имя всегда будет в одну строку */
-    font-size: 1.6rem;
-    margin-right: 20px;
-}
 /* --- Кнопка "Наверх" с Мягкой Базой --- */
 .back-to-top {
     position: fixed;

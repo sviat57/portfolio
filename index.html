@@ -9,23 +9,37 @@
 <body>
     <header>
         <nav>
-        <a href="#about" class="logo">Sviatoslav.</a>
-        <ul class="nav-links">
-            <li><a href="#about" data-i18n="nav-about">Über mich</a></li>
-            <li><a href="#skills" data-i18n="nav-skills">Fähigkeiten</a></li>
-            <li><a href="#education" data-i18n="nav-edu">Werdegang</a></li>
-            <li><a href="#projects" data-i18n="nav-proj">Projekte</a></li>
-            <li><a href="#cv-section" data-i18n="nav-cv">Lebenslauf</a></li>
-            <li><a href="#contact" data-i18n="nav-contact">Kontakt</a></li>
-        </ul>
+            <a href="#about" class="logo">Sviatoslav.</a>
+            
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav-about">Über mich</a></li>
+                <li><a href="#skills" data-i18n="nav-skills">Fähigkeiten</a></li>
+                <li><a href="#education" data-i18n="nav-edu">Werdegang</a></li>
+                <li><a href="#projects" data-i18n="nav-proj">Projekte</a></li>
+                <li><a href="#cv-section" data-i18n="nav-cv">Lebenslauf</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Kontakt</a></li>
+            </ul>
 
-        <div class="lang-switch">
-                <span id="label-de" class="lang-label active">DE</span>
-                <label class="switch">
-                    <input type="checkbox" id="lang-toggle">
-                    <span class="slider round"></span>
-                </label>
-                <span id="label-en" class="lang-label">EN</span>
+            <div class="nav-controls">
+                
+                <div class="lang-switch">
+                    <span id="label-de" class="lang-label active">DE</span>
+                    <label class="switch">
+                        <input type="checkbox" id="lang-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span id="label-en" class="lang-label">EN</span>
+                </div>
+                
+                <div class="theme-switch-wrapper" style="display: flex; align-items: center; gap: 8px; margin-left: 20px;">
+                    <span id="theme-icon-light">☀️</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span id="theme-icon-dark" style="opacity: 0.5;">🌙</span>
+                </div>
+                
             </div>
         </nav>
     </header> 

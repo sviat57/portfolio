@@ -280,4 +280,61 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('portfolio_lang', newLang); // Запоминаем выбор
         updateLanguage(newLang); // Обновляем текст
     });
+    // --- Система Темной/Светлой темы ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const iconLight = document.getElementById('theme-icon-light');
+    const iconDark = document.getElementById('theme-icon-dark');
+    const htmlElement = document.documentElement;
+
+    // Функция для обновления иконок (солнце/луна)
+    function updateThemeIcons(isDark) {
+        if (isDark) {
+            iconLight.style.opacity = '0.5';
+            iconDark.style.opacity = '1';
+        } else {
+            iconLight.style.opacity = '1';
+            iconDark.style.opacity = '0.5';
+        }
+    }
+
+    // 1. Проверяем сохраненную тему в localStorage
+    const savedTheme = localStorage.getItem('portfolio_theme');
+    
+    // 2. Проверяем системные настройки компьютера
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // 3. Устанавливаем начальную тему
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        themeToggle.checked = true;
+        updateThemeIcons(true);
+    } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        themeToggle.checked = false;
+        updateThemeIcons(false);
+    }
+
+    // 4. Слушаем ручное переключение
+    themeToggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('portfolio_theme', 'dark');
+            updateThemeIcons(true);
+        } else {
+            htmlElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('portfolio_theme', 'light');
+            updateThemeIcons(false);
+        }
+    });
+
+    // 5. Синхронизация: слушаем изменения настроек компьютера в реальном времени
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Меняем тему автоматически ТОЛЬКО если пользователь не выбирал ее вручную
+        if (!localStorage.getItem('portfolio_theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            themeToggle.checked = e.matches;
+            updateThemeIcons(e.matches);
+        }
+    });
 });
