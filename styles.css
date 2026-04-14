@@ -1,6 +1,48 @@
 /* =========================================
    1. БАЗОВЫЕ НАСТРОЙКИ
    ========================================= */
+   /* --- Кастомный скроллбар --- */
+/* Ширина всего скроллбара */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Фон дорожки, по которой едет ползунок */
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+/* Сам ползунок */
+::-webkit-scrollbar-thumb {
+    /* Создаем объем с помощью нескольких слоев градиента */
+    background-image: 
+        /* 1. Верхний яркий блик (как стекло) */
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 15px),
+        /* 2. Боковой объем (свет слева, тень справа) */
+        linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.2) 100%),
+        /* 3. Основной глубокий цвет (от синего к темно-синему) */
+        linear-gradient(to bottom, #6366f1, #3730a3);
+        
+    border-radius: 20px; /* Округляем до состояния капсулы */
+    border: 2px solid var(--bg-main); /* Прозрачная "рамка", чтобы ползунок не прилипал к краям */
+    
+    /* Внутреннее свечение для еще большего объема */
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4); 
+}
+
+/* Ползунок при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 20px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.3) 100%),
+        linear-gradient(to bottom, #4f46e5, #312e81);
+}
+
+/* Для Firefox (у него более простая настройка) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4f46e5 var(--bg-main);
+}
 /* --- Цветовые переменные для светлой и темной темы --- */
 :root {
     --bg-main: #f9f9fc;
@@ -121,8 +163,16 @@ nav {
     color: var(--text-heading);
 }
 
+/* Делаем так, чтобы каждая часть заголовка была на своей строке */
+.hero h1 span {
+    display: block; 
+}
+
+/* Настройки для имени и фамилии */
 .hero h1 span:last-child {
     color: #4f46e5; /* Синий акцент */
+    white-space: nowrap; /* Запрещаем переносить фамилию на новую строку */
+    margin-top: 10px; /* Небольшой отступ между "Hallo" и именем */
 }
 
 .hero p {
@@ -166,6 +216,9 @@ nav {
 .btn-outline:hover {
     background-color: rgba(79, 70, 229, 0.1);
     color: #4338ca;
+}
+[data-theme="dark"] .btn:hover {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.4); /* Мягкое неоновое свечение */
 }
 
 /* =========================================
@@ -387,8 +440,9 @@ section h2 {
 .project-image {
     width: 100%;
     height: 220px;
-    object-fit: cover; /* Картинка заполняет область без искажений */
-    border-bottom: 1px solid #eee;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Плавное движение */
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Обертка для текста внутри карточки */
@@ -640,8 +694,8 @@ footer a:hover {
     flex-direction: column;
 }
 
-.interactive-card:hover {
-    transform: translateY(-10px);
+.interactive-card:hover .project-image {
+    transform: scale(1.08); /* Картинка увеличивается на 8% */
 }
 
 /* Текст-подсказка */
@@ -1077,4 +1131,16 @@ input:checked + .slider {
 }
 input:checked + .slider:before {
     transform: translateX(22px);
+}
+.footer-links {
+    margin-top: 10px;
+}
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin: 0 5px;
+}
+.footer-links a:hover {
+    color: #4f46e5;
 }
