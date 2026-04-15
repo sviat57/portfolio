@@ -589,16 +589,51 @@ footer a:hover {
     justify-content: center;
 }
 
-.cert-card {
-    background: #e5e7eb;
-    width: 300px;
-    height: 200px;
-    border-radius: 8px;
+/* Стили для реальных карточек сертификатов */
+.cert-card-real {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: #6b7280;
-    border: 2px dashed #9ca3af;
+    justify-content: space-between;
+}
+
+.cert-card-real:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-color: #4f46e5;
+}
+
+.cert-card-real .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cert-card-real h4 {
+    color: var(--text-heading);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.cert-card-real p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Чтобы кнопки всегда были на одном уровне снизу */
+}
+
+/* Компактная кнопка для карточек */
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    width: 100%;
 }
 
 /* =========================================

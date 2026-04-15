@@ -218,6 +218,20 @@ document.addEventListener('DOMContentLoaded', () => {
     "cv-exp-4": { de: "Aushilfe in der Bäckerei (Ferienjob).", en: "Bakery assistant (holiday job)." },
     "cv-exp-5": { de: "Küchenhilfe im asiatischen Restaurant (Nebenjob).", en: "Kitchen assistant in an Asian restaurant (part-time job)." },
     "cert-title": { de: "Meine Zertifikate", en: "My Certificates" },
+    // Сертификаты
+    "cert-1-title": { de: "Deutsch B2.1", en: "German B2.1" },
+    "cert-1-desc": { de: "Sprachzertifikat", en: "Language Certificate" },
+    
+    "cert-2-title": { de: "Anerkannter MSA", en: "Recognized MSA" },
+    "cert-2-desc": { de: "Senatsverwaltung Berlin", en: "Berlin Senate Department" },
+    
+    "cert-3-title": { de: "Vorbereitungskurs", en: "Preparatory Course" },
+    "cert-3-desc": { de: "Victor-Klemperer-Kolleg", en: "Victor-Klemperer-Kolleg" },
+    
+    "cert-4-title": { de: "Zeugnis (Ukraine)", en: "School Certificate" },
+    "cert-4-desc": { de: "Mittelschulbildung (Übersetzt)", en: "Secondary Education (Translated)" },
+    
+    "btn-pdf-view": { de: "PDF Ansehen", en: "View PDF" },
 
     // Секция: Контакты и Футер
     "contact-title": { de: "Kontakt", en: "Contact" },
