@@ -203,7 +203,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "proj-2-li-1": { de: "<strong>Geometrie:</strong> Saubere Hard-Surface Topologie.", en: "<strong>Geometry:</strong> Clean hard-surface topology." },
     "proj-2-li-2": { de: "<strong>Shader:</strong> Prozedurale Effekte für leuchtende Tasten.", en: "<strong>Shaders:</strong> Procedural effects for glowing keys." },
     "proj-2-li-3": { de: "<strong>Stil:</strong> Kombination aus Realismus und stilisiertem Design.", en: "<strong>Style:</strong> Combination of realism and stylized design." },
-
+    "proj-3-desc": { de: "Umfassende praktische Erfahrung im IT-Service (comz) der Alice Salomon Hochschule. Entwicklung von Web-Lösungen, Automatisierung und Hardware-Support.", en: "Comprehensive practical experience in the IT service (comz) of the Alice Salomon University. Web development, automation, and hardware support." },
+    "proj-3-li-1": { de: "<strong>Webentwicklung:</strong> Entwicklung und Pflege der Hochschul-Webseite.", en: "<strong>Web Development:</strong> Development and maintenance of the university website." },
+    "proj-3-li-2": { de: "<strong>Automatisierung:</strong> Programmierung von Skripten mit Python für Server-Aufgaben.", en: "<strong>Automation:</strong> Programming scripts using Python for server tasks." },
+    "proj-3-li-3": { de: "<strong>3D-Technologien:</strong> Erstellung von 3D-Modellen mit Blender und Vorbereitung für 3D-Druck.", en: "<strong>3D Technologies:</strong> Creating 3D models with Blender and preparation for 3D printing." },
+    "proj-3-li-4": { de: "<strong>Hardware & Server:</strong> Vorbereitung von PC-Hardware und Unterstützung bei der Server-Wartung im comz.", en: "<strong>Hardware & Servers:</strong> Hardware preparation and support for server maintenance in the comz team." },
+    "proj-3-showcase-title": { de: "Beispielprojekt: 3D-gedruckte USB-Schutzabdeckungen", en: "Project Example: 3D-Printed USB Protective Covers" },
+    "proj-3-showcase-desc": { de: "Entwicklung und Modellierung von passgenauen USB-Port-Abdeckungen zum Schutz der Hochschul-Hardware vor Staub und physischen Beschädigungen. Die Modelle wurden in Blender entworfen und für den präzisen 3D-Druck optimiert.", en: "Development and modeling of custom-fit USB port covers to protect university hardware from dust and physical damage. The models were designed in Blender and optimized for precise 3D printing." },
     // Секция: Резюме
     "cv-title": { de: "Lebenslauf & Zertifikate", en: "CV & Certificates" },
     "cv-address": { de: "<strong>Adresse:</strong> Stollbergerstraße 87, Berlin 12627", en: "<strong>Address:</strong> Stollbergerstraße 87, 12627 Berlin" },

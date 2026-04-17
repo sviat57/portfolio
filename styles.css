@@ -493,6 +493,98 @@ section h2 {
 .project-content a:hover {
     color: #3730a3;
 }
+/* --- Стили для широкой карточки Практики (comz) --- */
+.interactive-card.wide-card {
+    max-width: 930px; 
+    flex-basis: 100%;  
+    /* Отступы: 0 сверху, auto по бокам (центрирование), 30px снизу (расстояние до других карточек) */
+    margin: 0 auto 30px auto; 
+}
+/* 2. Обертка для логотипа (вместо обычного фото) */
+.logo-wrapper {
+    height: 250px;
+    width: 100%;
+    background-color: #ffffff; /* Белый фон обязателен, чтобы логотип с черным текстом не "пропал" в темной теме */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color); /* Линия отделения от текста, как в других карточках  */
+    padding: 20px;
+}
+
+/* 3. Настройка самого SVG логотипа */
+.project-logo {
+    max-width: 80%;      /* Чтобы логотип не упирался в края */
+    max-height: 160px;   /* Ограничиваем высоту для аккуратности */
+    object-fit: contain; /* Сохраняет пропорции логотипа без искажений */
+    transition: transform 0.4s ease; /* Плавный эффект при наведении  */
+}
+
+/* Эффект увеличения логотипа при наведении на всю карточку */
+.interactive-card.wide-card:hover .project-logo {
+    transform: scale(1.05);
+}
+
+/* 4. Адаптивность для мобильных телефонов */
+@media (max-width: 768px) {
+    .logo-wrapper {
+        height: 180px; /* Уменьшаем высоту блока на смартфонах */
+    }
+    
+    .project-logo {
+        max-width: 90%;
+        max-height: 120px;
+    }
+}/* --- Стили для мини-галереи внутри проектов --- */
+.project-showcase {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: var(--bg-main); /* Легкое выделение на фоне карточки */
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.project-showcase h5 {
+    color: #4f46e5;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.project-showcase p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.showcase-gallery {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap; /* Чтобы на телефонах фото переносились на новую строку */
+}
+
+.showcase-gallery img {
+    width: calc(33.333% - 10px); /* Три фото в один ряд */
+    min-width: 150px; /* Минимальная ширина для телефонов */
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.showcase-gallery img:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.2); /* Синее свечение */
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .showcase-gallery img {
+        width: 100%; /* На телефонах фото будут идти друг под другом */
+    }
+}
 
 
 /* =========================================
