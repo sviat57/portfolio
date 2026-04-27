@@ -218,11 +218,12 @@
                             <hr>
                             <h4 data-i18n="proj-details-title">Projekt-Details</h4>
                             <ul>
-                                <li data-i18n="proj-3-li-1"><strong>Webentwicklung:</strong> Entwicklung und Pflege der Hochschul-Webseite.</li>
-                                <li data-i18n="proj-3-li-2"><strong>Automatisierung:</strong> Programmierung von Skripten mit Python für Server-Aufgaben.</li>
-                                <li data-i18n="proj-3-li-3"><strong>3D-Technologien:</strong> Erstellung von 3D-Modellen mit Blender und Vorbereitung für 3D-Druck.</li>
-                                <li data-i18n="proj-3-li-4"><strong>Hardware & Server:</strong> Vorbereitung von PC-Hardware und Unterstützung bei der Server-Wartung im comz.</li>
-                            </ul>
+                            <li data-i18n="proj-3-li-1"><strong>Webentwicklung:</strong> Entwicklung und Pflege der Hochschul-Webseite.</li>
+                            <li data-i18n="proj-3-li-2"><strong>Automatisierung:</strong> Programmierung von Skripten mit Python für Server-Aufgaben.</li>
+                            <li data-i18n="proj-3-li-3"><strong>3D-Technologien:</strong> Erstellung von 3D-Modellen mit Blender und Vorbereitung für 3D-Druck.</li>
+                            <li data-i18n="proj-3-li-4"><strong>Hardware & Server:</strong> Vorbereitung von PC-Hardware und Unterstützung bei der Server-Wartung im comz.</li>
+                            <li data-i18n="proj-3-li-5"><strong>Mikrocontroller:</strong> Erste praktische Erfahrungen mit ESP32-CAM und Sensorik.</li>
+                        </ul>
                             
                             <div class="project-showcase">
                                 <h5 data-i18n="proj-3-showcase-title">Beispielprojekt: 3D-gedruckte USB-Schutzabdeckungen</h5>
@@ -232,6 +233,16 @@
                                     <img src="img/usb-cover-1.jpg" alt="3D Modell USB Abdeckung 1">
                                     <img src="img/usb-cover-2.jpg" alt="3D Modell USB Abdeckung 2">
                                     <img src="img/usb-cover-3.jpg" alt="3D Modell USB Abdeckung 3">
+                                </div>
+                            </div>
+                            <div class="project-showcase">
+                                <h5 data-i18n="proj-3-arduino-title">Erste Schritte in IoT: ESP32-Steuerung</h5>
+                                <p data-i18n="proj-3-arduino-desc">Programmierung von Mikrocontrollern mit C++. Aufbau von Schaltungen auf dem Breadboard zur Steuerung von RGB-LEDs und Vorbereitung für IoT-Anwendungen.</p>
+                                
+                                <div class="showcase-gallery">
+                                    <img src="img/arduino-code.png" alt="Arduino IDE C++ Code">
+                                    <img src="img/esp32-setup-1.jpg" alt="ESP32 Setup">
+                                    <img src="img/esp32-setup-2.jpg" alt="ESP32 Breadboard">
                                 </div>
                             </div>
                             
@@ -249,7 +260,7 @@
                             <span class="tag">Architekturvisualisierung</span>
                             <span class="tag">Interieur</span>
                         </div>
-                        <p data-i18n="proj-1-desc">Eine fotorealistische 3D-Visualisierung eines Innenraums mit Fokus auf Licht и Atmosphäre.</p>
+                        <p data-i18n="proj-1-desc">Eine fotorealistische 3D-Visualisierung eines Innenraums mit Fokus auf Licht und Atmosphäre.</p>
                         <p class="click-hint" data-i18n="proj-click-hint">Klicken für Details</p>
                     </div>
                     
@@ -287,7 +298,7 @@
                             <ul>
                                 <li data-i18n="proj-2-li-1"><strong>Geometrie:</strong> Saubere Hard-Surface Topologie.</li>
                                 <li data-i18n="proj-2-li-2"><strong>Shader:</strong> Prozedurale Effekte für leuchtende Tasten.</li>
-                                <li data-i18n="proj-2-li-3"><strong>Stil:</strong> Kombination aus Realismus и stilisiertem Design.</li>
+                                <li data-i18n="proj-2-li-3"><strong>Stil:</strong> Kombination aus Realismus und stilisiertem Design.</li>
                             </ul>
                             <a href="https://www.artstation.com/" target="_blank" class="project-link-btn" data-i18n="proj-btn-link">Auf ArtStation ansehen →</a>
                         </div>
@@ -358,7 +369,7 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h2 data-i18n="contact-title">Kontakt</h2>
-                <p data-i18n="contact-desc">Haben Sie ein Projekt im Kopf или möchten Sie einfach nur Hallo sagen? Ich freue mich auf Ihre Nachricht!</p>
+                <p data-i18n="contact-desc">Haben Sie ein Projekt im Kopf oder möchten Sie einfach nur Hallo sagen? Ich freue mich auf Ihre Nachricht!</p>
                 <ul class="contact-details">
                     <li data-i18n="contact-loc"><strong>Ort:</strong> Berlin, Deutschland</li>
                     <li data-i18n="cv-email"><strong>E-Mail:</strong> <a href="mailto:kyselovsviatoslav@gmail.com">kyselovsviatoslav@gmail.com</a></li>
@@ -394,7 +405,9 @@
             </div>
         </div>
     </footer>
-
+<div id="image-modal" class="image-modal">
+    <img class="image-modal-content" id="expanded-img" alt="Увеличенное изображение">
+</div>
     <script src="js/script.js"></script>
     <button id="back-to-top" class="back-to-top"></button>
 </body>

@@ -75,6 +75,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // --- Логика для Lightbox (Blender + ESP32) без крестика ---
+    const imageModal = document.getElementById('image-modal');
+    const expandedImg = document.getElementById('expanded-img');
+    const galleryImages = document.querySelectorAll('.project-image, .showcase-gallery img');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            const card = img.closest('.interactive-card');
+            const expandBlock = card.querySelector('.project-details-expand');
+
+            // Открываем, только если карточка уже развернута
+            if (expandBlock && expandBlock.classList.contains('open')) {
+                e.stopPropagation(); // Не даем карточке закрыться
+                expandedImg.src = img.src;
+                imageModal.classList.add('show');
+            }
+        });
+    });
+
+    // Закрытие при клике на темный фон (но не на саму картинку)
+    if(imageModal) {
+        imageModal.addEventListener('click', (e) => {
+            if (e.target !== expandedImg) {
+                imageModal.classList.remove('show');
+            }
+        });
+    }
     // --- Логика кнопки "Наверх" ---
     const backToTopBtn = document.getElementById('back-to-top');
 
@@ -224,6 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
     "cv-exp-4": { de: "Aushilfe in der Bäckerei (Ferienjob).", en: "Bakery assistant (holiday job)." },
     "cv-exp-5": { de: "Küchenhilfe im asiatischen Restaurant (Nebenjob).", en: "Kitchen assistant in an Asian restaurant (part-time job)." },
     "cert-title": { de: "Meine Zertifikate", en: "My Certificates" },
+    // Добавь это в секцию "Секция: Проекты" (после proj-3-showcase-desc)
+"proj-3-li-5": { de: "<strong>Mikrocontroller:</strong> Erste praktische Erfahrungen mit ESP32-CAM, Schaltungsaufbau und Sensorik.", en: "<strong>Microcontrollers:</strong> First practical experience with ESP32-CAM, circuit assembly, and sensors." },
+"proj-3-arduino-title": { de: "Erste Schritte in IoT: ESP32-Steuerung", en: "First Steps in IoT: ESP32 Control" },
+"proj-3-arduino-desc": { de: "Einführung in die hardwarenahe Programmierung mit C++ in der Arduino IDE. Aufbau von Testschaltungen auf dem Breadboard zur PWM-Steuerung von LEDs.", en: "Introduction to hardware-level programming with C++ in the Arduino IDE. Building test circuits on a breadboard for PWM control of LEDs." },
     // Сертификаты
     "cert-1-title": { de: "Deutsch B2.1", en: "German B2.1" },
     "cert-1-desc": { de: "Sprachzertifikat", en: "Language Certificate" },
